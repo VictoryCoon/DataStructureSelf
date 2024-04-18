@@ -39,7 +39,7 @@ inline bool MyStack<T>::Push(T _data)
 	{
 		maxSize *= 2;
 		T* newBuffer = new T[maxSize];
-		memcpy(newBuffer, buffer, sizeof(T)*cnt);	// 이부분 솔잘 모르겠음
+		memcpy(newBuffer, buffer, sizeof(T)*cnt);
 		delete buffer;
 		buffer = newBuffer;
 	}
