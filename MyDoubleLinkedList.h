@@ -96,7 +96,7 @@ inline bool MyDoubleLinkedList<T>::PopBack()
 template<typename T>
 inline bool MyDoubleLinkedList<T>::IsEmpty()
 {
-	return head->next == tail ? true : false;
+	return head->next == tail;
 }
 
 template<typename T>
