@@ -33,12 +33,11 @@ public:
 	bool PopBack();
 	bool IsEmpty();
 	void Clear();
-	T GetHead();
-	T GetTail();
+	//T GetHead();
+	//T GetTail();
 };
 
 template<typename T>
-// 앞으로넣는다, Front 로 넣는 것이 Head
 inline void MyDoubleLinkedList<T>::PushFront(T _in)
 {
 	Node* addNode = new Node();
@@ -50,7 +49,6 @@ inline void MyDoubleLinkedList<T>::PushFront(T _in)
 }
 
 template<typename T>
-// 앞에것을 뺀다.
 inline bool MyDoubleLinkedList<T>::PopFront()
 {
 	if (IsEmpty())
@@ -66,7 +64,6 @@ inline bool MyDoubleLinkedList<T>::PopFront()
 }
 
 template<typename T>
-// 뒤로넣는다, Back으로 넣는 것이 Tail
 inline void MyDoubleLinkedList<T>::PushBack(T _in)
 {
 	Node* addNode = new Node();
@@ -78,7 +75,6 @@ inline void MyDoubleLinkedList<T>::PushBack(T _in)
 }
 
 template<typename T>
-// 뒤에것을 뺀다.
 inline bool MyDoubleLinkedList<T>::PopBack()
 {
 	if (IsEmpty())
@@ -102,11 +98,13 @@ inline bool MyDoubleLinkedList<T>::IsEmpty()
 template<typename T>
 inline void MyDoubleLinkedList<T>::Clear()
 {
-	head->next = tail;
-	tail->prev = head;
+	while (!IsEmpty())
+	{
+		PopFront();
+	}
 }
 
-
+/*
 template<typename T>
 inline T MyDoubleLinkedList<T>::GetHead()
 {
@@ -118,3 +116,4 @@ inline T MyDoubleLinkedList<T>::GetTail()
 {
 	return tail->prev->data;
 }
+*/
